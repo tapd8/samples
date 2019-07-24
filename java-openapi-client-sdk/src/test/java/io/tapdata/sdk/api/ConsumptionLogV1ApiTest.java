@@ -53,7 +53,7 @@ public class ConsumptionLogV1ApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
-//    @Test
+    @Test
     public void cONSUMPTIONLOGV1ControllerCreateTest() throws ApiException {
         CONSUMPTIONLOG CONSUMPTIONLOG = new CONSUMPTIONLOG();
         CONSUMPTIONLOG.setCUSTOMERID("C000079948");
@@ -163,7 +163,7 @@ public class ConsumptionLogV1ApiTest {
         this.cONSUMPTIONLOGV1ControllerFindByIdTest();
         this.cONSUMPTIONLOGV1ControllerUpdateByIdTest();
         this.cONSUMPTIONLOGV1ControllerFindByIdTest();
-        this.cONSUMPTIONLOGV1ControllerDeleteByIdTest();
+//        this.cONSUMPTIONLOGV1ControllerDeleteByIdTest();
         this.cONSUMPTIONLOGV1ControllerFindPageTest();
     }
 
