@@ -20,6 +20,8 @@ import io.tapdata.sdk.model.Filter1;
 import io.tapdata.sdk.model.InlineResponse2001;
 import io.tapdata.sdk.model.TransactionLog;
 import org.apache.commons.lang3.RandomUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.Ignore;
 import org.threeten.bp.OffsetDateTime;
@@ -45,6 +47,19 @@ public class TransactionLogV1ApiTest {
     private final TransactionLogV1Api api = new TransactionLogV1Api(apiClient);
 
     private static String id;
+    private static String customerId;
+    private static String shop;
+    private static int limit;
+    private static int skip;
+
+    @BeforeClass
+    public static void setUpBeforeClass(){
+        id = System.getProperty("transaction_id");
+        customerId = StringUtils.isNoneBlank(System.getProperty("customer_id")) ? System.getProperty("customer_id") : "C000079948";
+        shop = StringUtils.isNoneBlank(System.getProperty("shop")) ? System.getProperty("shop") : "LV";
+        limit = System.getProperty("limit") == null ? 10 : Integer.parseInt(System.getProperty("limit"));
+        skip = System.getProperty("skip") == null ? 0 : Integer.parseInt(System.getProperty("skip"));
+    }
 
     
     /**
@@ -58,10 +73,10 @@ public class TransactionLogV1ApiTest {
     @Test
     public void transactionLogV1ControllerCreateTest() throws ApiException {
         TransactionLog transactionLog = new TransactionLog();
-        transactionLog.setCUSTOMERID("C000079948");
+        transactionLog.setCUSTOMERID(customerId);
         transactionLog.setAMOUNT(new BigDecimal(RandomUtils.nextDouble(100, 200000)).setScale(2, BigDecimal.ROUND_HALF_UP));
         transactionLog.setBUYTIME(OffsetDateTime.now());
-        transactionLog.setSHOP("LV");
+        transactionLog.setSHOP(shop);
         TransactionLog response = api.transactionLogV1ControllerCreate(transactionLog);
 
         // TODO: test validations
@@ -121,8 +136,8 @@ public class TransactionLogV1ApiTest {
             put("[AMOUNT][gt]", 100000);
         }};
         filter.setWhere(where);
-        filter.setLimit(10);
-        filter.setSkip(0);
+        filter.setLimit(limit);
+        filter.setSkip(skip);
         filter.setOrder(new ArrayList<String>(){{
             add("AMOUNT+DESC");
         }});
