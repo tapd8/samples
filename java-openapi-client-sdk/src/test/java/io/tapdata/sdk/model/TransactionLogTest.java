@@ -22,31 +22,64 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
+import org.threeten.bp.OffsetDateTime;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for InlineResponse200Total
+ * Model tests for TransactionLog
  */
-public class InlineResponse200TotalTest {
-    private final InlineResponse200Total model = new InlineResponse200Total();
+public class TransactionLogTest {
+    private final TransactionLog model = new TransactionLog();
 
     /**
-     * Model tests for InlineResponse200Total
+     * Model tests for TransactionLog
      */
     @Test
-    public void testInlineResponse200Total() {
-        // TODO: test InlineResponse200Total
+    public void testTransactionLog() {
+        // TODO: test TransactionLog
     }
 
     /**
-     * Test the property 'count'
+     * Test the property 'id'
      */
     @Test
-    public void countTest() {
-        // TODO: test count
+    public void idTest() {
+        // TODO: test id
+    }
+
+    /**
+     * Test the property 'CUSTOMER_ID'
+     */
+    @Test
+    public void CUSTOMER_IDTest() {
+        // TODO: test CUSTOMER_ID
+    }
+
+    /**
+     * Test the property 'BUY_TIME'
+     */
+    @Test
+    public void BUY_TIMETest() {
+        // TODO: test BUY_TIME
+    }
+
+    /**
+     * Test the property 'AMOUNT'
+     */
+    @Test
+    public void AMOUNTTest() {
+        // TODO: test AMOUNT
+    }
+
+    /**
+     * Test the property 'SHOP'
+     */
+    @Test
+    public void SHOPTest() {
+        // TODO: test SHOP
     }
 
 }

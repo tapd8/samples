@@ -56,7 +56,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.12</version>
+                <version>3.0.0-M3</version>
                 <configuration>
                     <systemProperties>
                         <property>
@@ -64,9 +64,6 @@
                             <value>conf/log4j.properties</value>
                         </property>
                     </systemProperties>
-                    <argLine>-Xms512m -Xmx1500m</argLine>
-                    <parallel>methods</parallel>
-                    <forkMode>pertest</forkMode>
                 </configuration>
             </plugin>
             <plugin>

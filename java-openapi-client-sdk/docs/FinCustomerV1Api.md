@@ -32,12 +32,6 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://106.75.162.192:3080");
     
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
     // Configure OAuth2 access token for authorization: OAuth2
     OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
     OAuth2.setAccessToken("YOUR ACCESS TOKEN");
@@ -70,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -103,12 +97,6 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://106.75.162.192:3080");
     
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
     // Configure OAuth2 access token for authorization: OAuth2
     OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
     OAuth2.setAccessToken("YOUR ACCESS TOKEN");
@@ -140,7 +128,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -173,12 +161,6 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://106.75.162.192:3080");
     
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
     // Configure OAuth2 access token for authorization: OAuth2
     OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
     OAuth2.setAccessToken("YOUR ACCESS TOKEN");
@@ -211,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -225,7 +207,7 @@ Name | Type | Description  | Notes
 
 <a name="fINCUSTOMERV1ControllerFindPage"></a>
 # **fINCUSTOMERV1ControllerFindPage**
-> InlineResponse2001 fINCUSTOMERV1ControllerFindPage(filter)
+> InlineResponse200 fINCUSTOMERV1ControllerFindPage(filter)
 
 get record list by page and limit
 
@@ -244,20 +226,14 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://106.75.162.192:3080");
     
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
     // Configure OAuth2 access token for authorization: OAuth2
     OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
     OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
     FinCustomerV1Api apiInstance = new FinCustomerV1Api(defaultClient);
-    Filter1 filter = new Filter1(); // Filter1 | 
+    Filter filter = new Filter(); // Filter | 
     try {
-      InlineResponse2001 result = apiInstance.fINCUSTOMERV1ControllerFindPage(filter);
+      InlineResponse200 result = apiInstance.fINCUSTOMERV1ControllerFindPage(filter);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FinCustomerV1Api#fINCUSTOMERV1ControllerFindPage");
@@ -274,15 +250,15 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**Filter1**](.md)|  | [optional] [default to null]
+ **filter** | [**Filter**](.md)|  | [optional] [default to null]
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -315,12 +291,6 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://106.75.162.192:3080");
     
-    // Configure API key authorization: ApiKeyAuth
-    ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
-    ApiKeyAuth.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //ApiKeyAuth.setApiKeyPrefix("Token");
-
     // Configure OAuth2 access token for authorization: OAuth2
     OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
     OAuth2.setAccessToken("YOUR ACCESS TOKEN");
@@ -354,7 +324,7 @@ null (empty response body)
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth), [OAuth2](../README.md#OAuth2)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
