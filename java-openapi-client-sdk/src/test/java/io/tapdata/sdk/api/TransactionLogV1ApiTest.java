@@ -15,10 +15,7 @@ package io.tapdata.sdk.api;
 
 import io.tapdata.sdk.ApiException;
 import io.tapdata.sdk.ApiClient;
-import io.tapdata.sdk.model.CONSUMPTIONLOG;
-import io.tapdata.sdk.model.Filter1;
-import io.tapdata.sdk.model.InlineResponse2001;
-import io.tapdata.sdk.model.TransactionLog;
+import io.tapdata.sdk.model.*;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.BeforeClass;
@@ -57,7 +54,7 @@ public class TransactionLogV1ApiTest {
         id = System.getProperty("transaction_id");
         customerId = StringUtils.isNoneBlank(System.getProperty("customer_id")) ? System.getProperty("customer_id") : "C000079948";
         shop = StringUtils.isNoneBlank(System.getProperty("shop")) ? System.getProperty("shop") : "LV";
-        limit = System.getProperty("limit") == null ? 10 : Integer.parseInt(System.getProperty("limit"));
+        limit = System.getProperty("limit") == null ? 5 : Integer.parseInt(System.getProperty("limit"));
         skip = System.getProperty("skip") == null ? 0 : Integer.parseInt(System.getProperty("skip"));
     }
 
@@ -141,6 +138,37 @@ public class TransactionLogV1ApiTest {
         filter.setOrder(new ArrayList<String>(){{
             add("AMOUNT+DESC");
         }});
+
+        InlineResponse2001 response = api.transactionLogV1ControllerFindPage(filter);
+
+        // TODO: test validations
+        System.out.println("====== Find by filter ======");
+        System.out.println(filter.toString());
+        System.out.println("Total count: " + response.getTotal());
+        List<TransactionLog> data = response.getData();
+        for (TransactionLog datum : data) {
+            System.out.println(datum.toString());
+        }
+        System.out.println("\n\n");
+    }
+
+    @Test
+    public void transactionLogV1ControllerFindPageFilterFieldsTest() throws ApiException {
+        Filter1 filter = new Filter1();
+        Map<String, Object> where = new HashMap<String, Object>(){{
+            put("[AMOUNT][gt]", 100000);
+        }};
+        filter.setWhere(where);
+        filter.setLimit(limit);
+        filter.setSkip(skip);
+        filter.setOrder(new ArrayList<String>(){{
+            add("AMOUNT+DESC");
+        }});
+        ApiV1TransactionLogFields fields = new ApiV1TransactionLogFields();
+        fields.setId(true);
+        fields.setCUSTOMERID(true);
+        filter.setFields(fields);
+
         InlineResponse2001 response = api.transactionLogV1ControllerFindPage(filter);
 
         // TODO: test validations
