@@ -205,7 +205,6 @@ public class Filter1 {
     sb.append("class Filter1 {\n");
     sb.append("    where: ").append(toIndentedString(where)).append("\n");
     sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
-    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("    skip: ").append(toIndentedString(skip)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");

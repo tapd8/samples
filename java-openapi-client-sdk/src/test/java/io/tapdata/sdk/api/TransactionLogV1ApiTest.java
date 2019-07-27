@@ -15,11 +15,10 @@ package io.tapdata.sdk.api;
 
 import io.tapdata.sdk.ApiException;
 import io.tapdata.sdk.ApiClient;
-import io.tapdata.sdk.model.CONSUMPTIONLOG;
-import io.tapdata.sdk.model.Filter1;
-import io.tapdata.sdk.model.InlineResponse2001;
-import io.tapdata.sdk.model.TransactionLog;
+import io.tapdata.sdk.model.*;
 import org.apache.commons.lang3.RandomUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.Ignore;
 import org.threeten.bp.OffsetDateTime;
@@ -45,6 +44,19 @@ public class TransactionLogV1ApiTest {
     private final TransactionLogV1Api api = new TransactionLogV1Api(apiClient);
 
     private static String id;
+    private static String customerId;
+    private static String shop;
+    private static int limit;
+    private static int skip;
+
+    @BeforeClass
+    public static void setUpBeforeClass(){
+        id = System.getProperty("transaction_id");
+        customerId = StringUtils.isNoneBlank(System.getProperty("customer_id")) ? System.getProperty("customer_id") : "C000079948";
+        shop = StringUtils.isNoneBlank(System.getProperty("shop")) ? System.getProperty("shop") : "LV";
+        limit = System.getProperty("limit") == null ? 5 : Integer.parseInt(System.getProperty("limit"));
+        skip = System.getProperty("skip") == null ? 0 : Integer.parseInt(System.getProperty("skip"));
+    }
 
     
     /**
@@ -58,10 +70,10 @@ public class TransactionLogV1ApiTest {
     @Test
     public void transactionLogV1ControllerCreateTest() throws ApiException {
         TransactionLog transactionLog = new TransactionLog();
-        transactionLog.setCUSTOMERID("C000079948");
+        transactionLog.setCUSTOMERID(customerId);
         transactionLog.setAMOUNT(new BigDecimal(RandomUtils.nextDouble(100, 200000)).setScale(2, BigDecimal.ROUND_HALF_UP));
         transactionLog.setBUYTIME(OffsetDateTime.now());
-        transactionLog.setSHOP("LV");
+        transactionLog.setSHOP(shop);
         TransactionLog response = api.transactionLogV1ControllerCreate(transactionLog);
 
         // TODO: test validations
@@ -121,11 +133,42 @@ public class TransactionLogV1ApiTest {
             put("[AMOUNT][gt]", 100000);
         }};
         filter.setWhere(where);
-        filter.setLimit(10);
-        filter.setSkip(0);
+        filter.setLimit(limit);
+        filter.setSkip(skip);
         filter.setOrder(new ArrayList<String>(){{
             add("AMOUNT+DESC");
         }});
+
+        InlineResponse2001 response = api.transactionLogV1ControllerFindPage(filter);
+
+        // TODO: test validations
+        System.out.println("====== Find by filter ======");
+        System.out.println(filter.toString());
+        System.out.println("Total count: " + response.getTotal());
+        List<TransactionLog> data = response.getData();
+        for (TransactionLog datum : data) {
+            System.out.println(datum.toString());
+        }
+        System.out.println("\n\n");
+    }
+
+    @Test
+    public void transactionLogV1ControllerFindPageFilterFieldsTest() throws ApiException {
+        Filter1 filter = new Filter1();
+        Map<String, Object> where = new HashMap<String, Object>(){{
+            put("[AMOUNT][gt]", 100000);
+        }};
+        filter.setWhere(where);
+        filter.setLimit(limit);
+        filter.setSkip(skip);
+        filter.setOrder(new ArrayList<String>(){{
+            add("AMOUNT+DESC");
+        }});
+        ApiV1TransactionLogFields fields = new ApiV1TransactionLogFields();
+        fields.setId(true);
+        fields.setCUSTOMERID(true);
+        filter.setFields(fields);
+
         InlineResponse2001 response = api.transactionLogV1ControllerFindPage(filter);
 
         // TODO: test validations

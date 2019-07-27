@@ -154,5 +154,40 @@ It's recommended to create an instance of `ApiClient` per thread in a multithrea
 
 ## Author
 
+## TransactionLogV1ApiTest Run mvn test
+
+### Run all Test
+1. create one
+2. find by id
+3. update one
+4. find by id
+5. find page
+```$xslt
+mvn test -Dtest=TransactionLogV1ApiTest#allTest
+```
+
+### Create One
+```$xslt
+mvn test -Dtest=TransactionLogV1ApiTest#transactionLogV1ControllerCreateTest \
+-Dcustomer_id=123 -Dshop=LINING
+```
+
+### Find by id
+```$xslt
+mvn test -Dtest=TransactionLogV1ApiTest#transactionLogV1ControllerFindByIdTest \
+-Dtransaction_id=5d39171822ac0165bc3d1a8f
+```
+
+### Delete by id
+```$xslt
+mvn test -Dtest=TransactionLogV1ApiTest#transactionLogV1ControllerDeleteByIdTest \
+-Dtransaction_id=5d39171822ac0165bc3d1a8f
+```
+
+### Find page
+```$xslt
+mvn test -Dtest=TransactionLogV1ApiTest#transactionLogV1ControllerFindPageTest \
+ -Dlimit=5 -Dskip=0
+```
 
 
