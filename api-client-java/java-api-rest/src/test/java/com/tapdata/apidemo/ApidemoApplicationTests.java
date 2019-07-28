@@ -1,17 +1,11 @@
 package com.tapdata.apidemo;
 
-import com.tapdata.apidemo.apicall.ApiCallController;
-import com.tapdata.apidemo.common.ApiFilter;
-import com.tapdata.apidemo.common.ApiResponse;
-import com.tapdata.apidemo.common.ServiceException;
-import com.tapdata.apidemo.common.service.CommonService;
+import com.tapdata.apidemo.common.*;
+import com.tapdata.apidemo.utils.HttpUtils;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.util.LinkedMultiValueMap;
 
-import java.math.BigDecimal;
-import java.time.OffsetDateTime;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,22 +13,33 @@ import java.util.Map;
 @SpringBootTest
 class ApidemoApplicationTests {
 
-	@Autowired
-	private ApiCallController apiCallController;
-
+	private String token = null;
 	private String id = null;
+
+	public void getToken() {
+		Map<String, Object> map = new HashMap<>(3);
+		map.put("grant_type", "client_credentials");
+		map.put("client_id", AppConstants.CLIENT_ID);
+		map.put("client_secret", AppConstants.CLIENT_SECRET);
+		Map<String, Object> result = HttpUtils.httpPost(AppConstants.TOKEN_URL, map, 5000);
+		if (result != null && result.get("access_token") != null) {
+			token = (String)result.get("access_token");
+		}
+	}
 
 	public void createTest() {
 		Map<String, Object> customer = new HashMap<>();
 		customer.put("COUNTRY_CODE", "EE");
 		customer.put("CUSTOMER_ID", "EE555");
 		customer.put("FIRST_NAME", "TEST");
-		Map<String, Object> response = apiCallController.apiCreate(customer);
+		Map<String, String> headers = new HashMap<>(1);
+		headers.put("access_token", token);
+		Map<String, Object> resultMap = HttpUtils.httpPost(AppConstants.FIN_CUSTOMER_URL, customer, headers, 5000);
 
 		// TODO: test validations
 		System.out.println("====== Create customer ======");
-		System.out.println(response.toString());
-		id = response.get("_id").toString();
+		System.out.println(resultMap.toString());
+		id = resultMap.get("_id").toString();
 		System.out.println("\n\n");
 	}
 
@@ -42,51 +47,60 @@ class ApidemoApplicationTests {
 		Map<String, Object> updateMap = new HashMap<>();
 		updateMap.put("_id", id);
 		updateMap.put("FIRST_NAME", "UPDATED_TEST");
-		Map<String, Object> response = apiCallController.apiPatch(updateMap);
+		Map<String, String> headers = new HashMap<>(1);
+		headers.put("access_token", token);
+		String id = updateMap.get("_id").toString();
+		String url = AppConstants.FIN_CUSTOMER_URL + "/" + id;
+		updateMap.remove("_id");
+		Map<String, Object> resultMap = HttpUtils.httpPatch(url, updateMap, headers, 5000);
 
 		// TODO: test validations
 		System.out.println("====== Update FIRST_NAME=" + updateMap + " by id succeed ======\n\n");
 	}
 
 	public void getTest() {
-		Map<String, Object> response = apiCallController.apiGet(id);
+		Map<String, String> headers = new HashMap<>(1);
+		headers.put("access_token", token);
+		String url = AppConstants.FIN_CUSTOMER_URL + "/" + id;
+		Map<String, Object> resultMap = HttpUtils.httpGet(url, null, headers, 5000);
 
 		// TODO: test validations
 		System.out.println("====== Find by id: " + this.id + " ======");
-		System.out.println(response.toString());
+		System.out.println(resultMap.toString());
 		System.out.println("\n\n");
 	}
 
 	public void deleteTest() {
-		apiCallController.apiDelete(id);
+		Map<String, String> headers = new HashMap<>(1);
+		headers.put("access_token", token);
+		String url = AppConstants.FIN_CUSTOMER_URL + "/" + id;
+		HttpUtils.httpDelete(url, null, headers, 5000);
 
 		// TODO: test validations
 		System.out.println("====== Delete by id: " + this.id + " succeed ======\n\n");
 	}
 
 	public void findPageTest() {
-		Map<String, Object> whereMap = new HashMap<>();
-		whereMap.put("[COUNTRY_CODE]", "AT");
-		Map<String, Object> fieldMap = new HashMap<>();
-		fieldMap.put("CUSTOMER_ID", true);
-		fieldMap.put("FIRST_NAME", true);
-		fieldMap.put("COUNTRY_CODE", true);
-		List<String> orderList = new ArrayList<>();
-		orderList.add("CUSTOMER_ID DESC");
+		LinkedMultiValueMap<String, String> param = new LinkedMultiValueMap<>();
+		param.add("filter[where][COUNTRY_CODE]", "AT");
+		param.add("filter[fields][CUSTOMER_ID]", "true");
+		param.add("filter[fields][FIRST_NAME]", "true");
+		param.add("filter[fields][COUNTRY_CODE]", "true");
+		param.add("filter[order]", "CUSTOMER_ID DESC");
+		param.add("filter[skip]", "0");
+		param.add("filter[limit]", "10");
 
-		ApiFilter filter = new ApiFilter();
-		filter.setPageSize(10);
-		filter.setPageNum(1);
-		filter.setWhere(whereMap);
-		filter.setFields(fieldMap);
-		filter.setOrder(orderList);
-		ApiResponse response = apiCallController.apiPage(filter);
+		Map<String, String> headers = new HashMap<>(1);
+		headers.put("access_token", token);
+
+		Map<String, Object> resultMap = HttpUtils.httpGet(AppConstants.FIN_CUSTOMER_URL, param, headers, 5000);
+		List<Map<String, Object>> resultList = (List)resultMap.get("data");
+		Map<String, Object> totalMap = (Map<String, Object>)resultMap.get("total");
 
 		System.out.println("====== Find by filter ======");
-		System.out.println(filter.toString());
-		System.out.println("Total count: " + response.getTotal());
-		List<Map<String, Object>> data = (List<Map<String, Object>>)response.getData();
-		for (Map<String, Object> datum : data) {
+		System.out.println(param.toString());
+		System.out.println("Total count: " + (Integer)totalMap.get("count"));
+		for (Map<String, Object> datum : resultList) {
 			System.out.println(datum.toString());
 		}
 		System.out.println("\n\n");
@@ -94,6 +108,7 @@ class ApidemoApplicationTests {
 
 	@Test
 	public void allTest() {
+		getToken();
 		createTest();
 		patchTest();
 		getTest();
