@@ -29,7 +29,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * TransactionLog
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-25T11:25:22.813+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-29T11:08:48.431+08:00[Asia/Shanghai]")
 public class TransactionLog {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)

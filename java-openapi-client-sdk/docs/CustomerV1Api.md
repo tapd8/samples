@@ -1,19 +1,19 @@
-# FinCustomerV1Api
+# CustomerV1Api
 
 All URIs are relative to *http://106.75.162.192:3080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fINCUSTOMERV1ControllerCreate**](FinCustomerV1Api.md#fINCUSTOMERV1ControllerCreate) | **POST** /api/v1/FIN_CUSTOMER | 
-[**fINCUSTOMERV1ControllerDeleteById**](FinCustomerV1Api.md#fINCUSTOMERV1ControllerDeleteById) | **DELETE** /api/v1/FIN_CUSTOMER/{id} | delete record by id
-[**fINCUSTOMERV1ControllerFindById**](FinCustomerV1Api.md#fINCUSTOMERV1ControllerFindById) | **GET** /api/v1/FIN_CUSTOMER/{id} | get record by id
-[**fINCUSTOMERV1ControllerFindPage**](FinCustomerV1Api.md#fINCUSTOMERV1ControllerFindPage) | **GET** /api/v1/FIN_CUSTOMER | get record list by page and limit
-[**fINCUSTOMERV1ControllerUpdateById**](FinCustomerV1Api.md#fINCUSTOMERV1ControllerUpdateById) | **PATCH** /api/v1/FIN_CUSTOMER/{id} | update record by id
+[**customerV1ControllerCreate**](CustomerV1Api.md#customerV1ControllerCreate) | **POST** /api/v1/Customer | 
+[**customerV1ControllerDeleteById**](CustomerV1Api.md#customerV1ControllerDeleteById) | **DELETE** /api/v1/Customer/{id} | delete record by id
+[**customerV1ControllerFindById**](CustomerV1Api.md#customerV1ControllerFindById) | **GET** /api/v1/Customer/{id} | get record by id
+[**customerV1ControllerFindPage**](CustomerV1Api.md#customerV1ControllerFindPage) | **GET** /api/v1/Customer | get record list by page and limit
+[**customerV1ControllerUpdateById**](CustomerV1Api.md#customerV1ControllerUpdateById) | **PATCH** /api/v1/Customer/{id} | update record by id
 
 
-<a name="fINCUSTOMERV1ControllerCreate"></a>
-# **fINCUSTOMERV1ControllerCreate**
-> FINCUSTOMER fINCUSTOMERV1ControllerCreate(FINCUSTOMER)
+<a name="customerV1ControllerCreate"></a>
+# **customerV1ControllerCreate**
+> Customer customerV1ControllerCreate(customer)
 
 
 
@@ -25,7 +25,7 @@ import io.tapdata.sdk.ApiException;
 import io.tapdata.sdk.Configuration;
 import io.tapdata.sdk.auth.*;
 import io.tapdata.sdk.models.*;
-import io.tapdata.sdk.api.FinCustomerV1Api;
+import io.tapdata.sdk.api.CustomerV1Api;
 
 public class Example {
   public static void main(String[] args) {
@@ -36,13 +36,13 @@ public class Example {
     OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
     OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
-    FinCustomerV1Api apiInstance = new FinCustomerV1Api(defaultClient);
-    FINCUSTOMER FINCUSTOMER = new FINCUSTOMER(); // FINCUSTOMER | 
+    CustomerV1Api apiInstance = new CustomerV1Api(defaultClient);
+    Customer customer = new Customer(); // Customer | 
     try {
-      FINCUSTOMER result = apiInstance.fINCUSTOMERV1ControllerCreate(FINCUSTOMER);
+      Customer result = apiInstance.customerV1ControllerCreate(customer);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling FinCustomerV1Api#fINCUSTOMERV1ControllerCreate");
+      System.err.println("Exception when calling CustomerV1Api#customerV1ControllerCreate");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -56,11 +56,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **FINCUSTOMER** | [**FINCUSTOMER**](FINCUSTOMER.md)|  | [optional]
+ **customer** | [**Customer**](Customer.md)|  | [optional]
 
 ### Return type
 
-[**FINCUSTOMER**](FINCUSTOMER.md)
+[**Customer**](Customer.md)
 
 ### Authorization
 
@@ -74,11 +74,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | FIN_CUSTOMER model instance |  -  |
+**200** | Customer model instance |  -  |
 
-<a name="fINCUSTOMERV1ControllerDeleteById"></a>
-# **fINCUSTOMERV1ControllerDeleteById**
-> fINCUSTOMERV1ControllerDeleteById(id)
+<a name="customerV1ControllerDeleteById"></a>
+# **customerV1ControllerDeleteById**
+> customerV1ControllerDeleteById(id)
 
 delete record by id
 
@@ -90,7 +90,7 @@ import io.tapdata.sdk.ApiException;
 import io.tapdata.sdk.Configuration;
 import io.tapdata.sdk.auth.*;
 import io.tapdata.sdk.models.*;
-import io.tapdata.sdk.api.FinCustomerV1Api;
+import io.tapdata.sdk.api.CustomerV1Api;
 
 public class Example {
   public static void main(String[] args) {
@@ -101,12 +101,12 @@ public class Example {
     OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
     OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
-    FinCustomerV1Api apiInstance = new FinCustomerV1Api(defaultClient);
+    CustomerV1Api apiInstance = new CustomerV1Api(defaultClient);
     String id = "id_example"; // String | 
     try {
-      apiInstance.fINCUSTOMERV1ControllerDeleteById(id);
+      apiInstance.customerV1ControllerDeleteById(id);
     } catch (ApiException e) {
-      System.err.println("Exception when calling FinCustomerV1Api#fINCUSTOMERV1ControllerDeleteById");
+      System.err.println("Exception when calling CustomerV1Api#customerV1ControllerDeleteById");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -138,11 +138,11 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | FIN_CUSTOMER DELETE success |  -  |
+**204** | Customer DELETE success |  -  |
 
-<a name="fINCUSTOMERV1ControllerFindById"></a>
-# **fINCUSTOMERV1ControllerFindById**
-> FINCUSTOMER fINCUSTOMERV1ControllerFindById(id)
+<a name="customerV1ControllerFindById"></a>
+# **customerV1ControllerFindById**
+> Customer customerV1ControllerFindById(id)
 
 get record by id
 
@@ -154,7 +154,7 @@ import io.tapdata.sdk.ApiException;
 import io.tapdata.sdk.Configuration;
 import io.tapdata.sdk.auth.*;
 import io.tapdata.sdk.models.*;
-import io.tapdata.sdk.api.FinCustomerV1Api;
+import io.tapdata.sdk.api.CustomerV1Api;
 
 public class Example {
   public static void main(String[] args) {
@@ -165,13 +165,13 @@ public class Example {
     OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
     OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
-    FinCustomerV1Api apiInstance = new FinCustomerV1Api(defaultClient);
+    CustomerV1Api apiInstance = new CustomerV1Api(defaultClient);
     String id = "id_example"; // String | 
     try {
-      FINCUSTOMER result = apiInstance.fINCUSTOMERV1ControllerFindById(id);
+      Customer result = apiInstance.customerV1ControllerFindById(id);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling FinCustomerV1Api#fINCUSTOMERV1ControllerFindById");
+      System.err.println("Exception when calling CustomerV1Api#customerV1ControllerFindById");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FINCUSTOMER**](FINCUSTOMER.md)
+[**Customer**](Customer.md)
 
 ### Authorization
 
@@ -203,11 +203,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | FIN_CUSTOMER model instance |  -  |
+**200** | Customer model instance |  -  |
 
-<a name="fINCUSTOMERV1ControllerFindPage"></a>
-# **fINCUSTOMERV1ControllerFindPage**
-> InlineResponse200 fINCUSTOMERV1ControllerFindPage(filter)
+<a name="customerV1ControllerFindPage"></a>
+# **customerV1ControllerFindPage**
+> InlineResponse200 customerV1ControllerFindPage(filter)
 
 get record list by page and limit
 
@@ -219,7 +219,7 @@ import io.tapdata.sdk.ApiException;
 import io.tapdata.sdk.Configuration;
 import io.tapdata.sdk.auth.*;
 import io.tapdata.sdk.models.*;
-import io.tapdata.sdk.api.FinCustomerV1Api;
+import io.tapdata.sdk.api.CustomerV1Api;
 
 public class Example {
   public static void main(String[] args) {
@@ -230,13 +230,13 @@ public class Example {
     OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
     OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
-    FinCustomerV1Api apiInstance = new FinCustomerV1Api(defaultClient);
+    CustomerV1Api apiInstance = new CustomerV1Api(defaultClient);
     Filter filter = new Filter(); // Filter | 
     try {
-      InlineResponse200 result = apiInstance.fINCUSTOMERV1ControllerFindPage(filter);
+      InlineResponse200 result = apiInstance.customerV1ControllerFindPage(filter);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling FinCustomerV1Api#fINCUSTOMERV1ControllerFindPage");
+      System.err.println("Exception when calling CustomerV1Api#customerV1ControllerFindPage");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -268,11 +268,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Object of page data, result.data is FIN_CUSTOMER model instances, result.total is model count. |  -  |
+**200** | Object of page data, result.data is Customer model instances, result.total is model count. |  -  |
 
-<a name="fINCUSTOMERV1ControllerUpdateById"></a>
-# **fINCUSTOMERV1ControllerUpdateById**
-> fINCUSTOMERV1ControllerUpdateById(id, FINCUSTOMER)
+<a name="customerV1ControllerUpdateById"></a>
+# **customerV1ControllerUpdateById**
+> customerV1ControllerUpdateById(id, customer)
 
 update record by id
 
@@ -284,7 +284,7 @@ import io.tapdata.sdk.ApiException;
 import io.tapdata.sdk.Configuration;
 import io.tapdata.sdk.auth.*;
 import io.tapdata.sdk.models.*;
-import io.tapdata.sdk.api.FinCustomerV1Api;
+import io.tapdata.sdk.api.CustomerV1Api;
 
 public class Example {
   public static void main(String[] args) {
@@ -295,13 +295,13 @@ public class Example {
     OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
     OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
-    FinCustomerV1Api apiInstance = new FinCustomerV1Api(defaultClient);
+    CustomerV1Api apiInstance = new CustomerV1Api(defaultClient);
     String id = "id_example"; // String | 
-    FINCUSTOMER FINCUSTOMER = new FINCUSTOMER(); // FINCUSTOMER | 
+    Customer customer = new Customer(); // Customer | 
     try {
-      apiInstance.fINCUSTOMERV1ControllerUpdateById(id, FINCUSTOMER);
+      apiInstance.customerV1ControllerUpdateById(id, customer);
     } catch (ApiException e) {
-      System.err.println("Exception when calling FinCustomerV1Api#fINCUSTOMERV1ControllerUpdateById");
+      System.err.println("Exception when calling CustomerV1Api#customerV1ControllerUpdateById");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -316,7 +316,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  |
- **FINCUSTOMER** | [**FINCUSTOMER**](FINCUSTOMER.md)|  | [optional]
+ **customer** | [**Customer**](Customer.md)|  | [optional]
 
 ### Return type
 
@@ -334,5 +334,5 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | FIN_CUSTOMER PATCH success |  -  |
+**204** | Customer PATCH success |  -  |
 

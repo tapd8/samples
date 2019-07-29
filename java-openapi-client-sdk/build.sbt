@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "io.tapdata",
     name := "tapdata-sdk",
-    version := "moa-v1.1.0-115-g56235c8",
+    version := "moa-v1.1.0-117-g6b02a67",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),

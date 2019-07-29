@@ -22,7 +22,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.tapdata.sdk.model.FINCUSTOMER;
+import io.tapdata.sdk.model.Customer;
 import io.tapdata.sdk.model.InlineResponse200Total;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,24 +31,24 @@ import java.util.List;
 /**
  * InlineResponse200
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-25T11:25:22.813+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-29T11:08:48.431+08:00[Asia/Shanghai]")
 public class InlineResponse200 {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private List<FINCUSTOMER> data = new ArrayList<FINCUSTOMER>();
+  private List<Customer> data = new ArrayList<Customer>();
 
   public static final String SERIALIZED_NAME_TOTAL = "total";
   @SerializedName(SERIALIZED_NAME_TOTAL)
   private InlineResponse200Total total = null;
 
-  public InlineResponse200 data(List<FINCUSTOMER> data) {
+  public InlineResponse200 data(List<Customer> data) {
     this.data = data;
     return this;
   }
 
-  public InlineResponse200 addDataItem(FINCUSTOMER dataItem) {
+  public InlineResponse200 addDataItem(Customer dataItem) {
     if (this.data == null) {
-      this.data = new ArrayList<FINCUSTOMER>();
+      this.data = new ArrayList<Customer>();
     }
     this.data.add(dataItem);
     return this;
@@ -59,11 +59,11 @@ public class InlineResponse200 {
    * @return data
   **/
   @ApiModelProperty(value = "")
-  public List<FINCUSTOMER> getData() {
+  public List<Customer> getData() {
     return data;
   }
 
-  public void setData(List<FINCUSTOMER> data) {
+  public void setData(List<Customer> data) {
     this.data = data;
   }
 

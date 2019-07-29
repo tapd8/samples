@@ -15,7 +15,7 @@ package io.tapdata.sdk.api;
 
 import io.tapdata.sdk.ApiException;
 import io.tapdata.sdk.ApiClient;
-import io.tapdata.sdk.model.FINCUSTOMER;
+import io.tapdata.sdk.model.Customer;
 import io.tapdata.sdk.model.Filter;
 import io.tapdata.sdk.model.InlineResponse200;
 import org.junit.Test;
@@ -27,10 +27,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for FinCustomerV1Api
+ * API tests for CustomerV1Api
  */
 @Ignore
-public class FinCustomerV1ApiTest {
+public class CustomerV1ApiTest {
 
     private final ApiClient apiClient = new ApiClient(
         "your_client_id",
@@ -38,7 +38,7 @@ public class FinCustomerV1ApiTest {
         "api_url", // http://127.0.0.1:3080
         "auth_url" // http://127.0.0.1:3030/oauth/token
     );
-    private final FinCustomerV1Api api = new FinCustomerV1Api(apiClient);
+    private final CustomerV1Api api = new CustomerV1Api(apiClient);
 
     
     /**
@@ -50,9 +50,9 @@ public class FinCustomerV1ApiTest {
      *          if the Api call fails
      */
     @Test
-    public void fINCUSTOMERV1ControllerCreateTest() throws ApiException {
-        FINCUSTOMER FINCUSTOMER = new FINCUSTOMER();
-        FINCUSTOMER response = api.fINCUSTOMERV1ControllerCreate(FINCUSTOMER);
+    public void customerV1ControllerCreateTest() throws ApiException {
+        Customer customer = new Customer();
+        Customer response = api.customerV1ControllerCreate(customer);
 
         // TODO: test validations
     }
@@ -66,9 +66,9 @@ public class FinCustomerV1ApiTest {
      *          if the Api call fails
      */
     @Test
-    public void fINCUSTOMERV1ControllerDeleteByIdTest() throws ApiException {
+    public void customerV1ControllerDeleteByIdTest() throws ApiException {
         String id = new String();
-        api.fINCUSTOMERV1ControllerDeleteById(id);
+        api.customerV1ControllerDeleteById(id);
 
         // TODO: test validations
     }
@@ -82,9 +82,9 @@ public class FinCustomerV1ApiTest {
      *          if the Api call fails
      */
     @Test
-    public void fINCUSTOMERV1ControllerFindByIdTest() throws ApiException {
+    public void customerV1ControllerFindByIdTest() throws ApiException {
         String id = new String();
-        FINCUSTOMER response = api.fINCUSTOMERV1ControllerFindById(id);
+        Customer response = api.customerV1ControllerFindById(id);
 
         // TODO: test validations
     }
@@ -98,9 +98,9 @@ public class FinCustomerV1ApiTest {
      *          if the Api call fails
      */
     @Test
-    public void fINCUSTOMERV1ControllerFindPageTest() throws ApiException {
+    public void customerV1ControllerFindPageTest() throws ApiException {
         Filter filter = new Filter();
-        InlineResponse200 response = api.fINCUSTOMERV1ControllerFindPage(filter);
+        InlineResponse200 response = api.customerV1ControllerFindPage(filter);
 
         // TODO: test validations
     }
@@ -114,10 +114,10 @@ public class FinCustomerV1ApiTest {
      *          if the Api call fails
      */
     @Test
-    public void fINCUSTOMERV1ControllerUpdateByIdTest() throws ApiException {
+    public void customerV1ControllerUpdateByIdTest() throws ApiException {
         String id = new String();
-        FINCUSTOMER FINCUSTOMER = new FINCUSTOMER();
-        api.fINCUSTOMERV1ControllerUpdateById(id, FINCUSTOMER);
+        Customer customer = new Customer();
+        api.customerV1ControllerUpdateById(id, customer);
 
         // TODO: test validations
     }

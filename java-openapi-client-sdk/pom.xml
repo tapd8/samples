@@ -5,7 +5,7 @@
     <artifactId>tapdata-sdk</artifactId>
     <packaging>jar</packaging>
     <name>tapdata-sdk</name>
-    <version>moa-v1.1.0-115-g56235c8</version>
+    <version>moa-v1.1.0-117-g6b02a67</version>
     <url>https://github.com/openapitools/openapi-generator</url>
     <description>OpenAPI Java</description>
     <scm>
@@ -239,6 +239,13 @@
             <version>${junit-version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- mongodb driver -->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>${mongodb.driver.version}</version>
+        </dependency>
     </dependencies>
     <properties>
         <java.version>1.7</java.version>
@@ -253,5 +260,6 @@
         <maven-plugin-version>1.0.0</maven-plugin-version>
         <junit-version>4.12</junit-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <mongodb.driver.version>3.10.2</mongodb.driver.version>
     </properties>
 </project>

@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.tapdata.sdk.model.FINCUSTOMER;
+import io.tapdata.sdk.model.Customer;
 import io.tapdata.sdk.model.Filter;
 import io.tapdata.sdk.model.InlineResponse200;
 
@@ -37,14 +37,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class FinCustomerV1Api {
+public class CustomerV1Api {
     private ApiClient localVarApiClient;
 
-    public FinCustomerV1Api() {
+    public CustomerV1Api() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public FinCustomerV1Api(ApiClient apiClient) {
+    public CustomerV1Api(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
@@ -57,22 +57,22 @@ public class FinCustomerV1Api {
     }
 
     /**
-     * Build call for fINCUSTOMERV1ControllerCreate
-     * @param FINCUSTOMER  (optional)
+     * Build call for customerV1ControllerCreate
+     * @param customer  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> FIN_CUSTOMER model instance </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Customer model instance </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call fINCUSTOMERV1ControllerCreateCall(FINCUSTOMER FINCUSTOMER, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = FINCUSTOMER;
+    public okhttp3.Call customerV1ControllerCreateCall(Customer customer, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = customer;
 
         // create path and map variables
-        String localVarPath = "/api/v1/FIN_CUSTOMER";
+        String localVarPath = "/api/v1/Customer";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -98,10 +98,10 @@ public class FinCustomerV1Api {
 
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call fINCUSTOMERV1ControllerCreateValidateBeforeCall(FINCUSTOMER FINCUSTOMER, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call customerV1ControllerCreateValidateBeforeCall(Customer customer, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = fINCUSTOMERV1ControllerCreateCall(FINCUSTOMER, _callback);
+        okhttp3.Call localVarCall = customerV1ControllerCreateCall(customer, _callback);
         return localVarCall;
 
     }
@@ -109,60 +109,60 @@ public class FinCustomerV1Api {
     /**
      * 
      * 
-     * @param FINCUSTOMER  (optional)
-     * @return FINCUSTOMER
+     * @param customer  (optional)
+     * @return Customer
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> FIN_CUSTOMER model instance </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Customer model instance </td><td>  -  </td></tr>
      </table>
      */
-    public FINCUSTOMER fINCUSTOMERV1ControllerCreate(FINCUSTOMER FINCUSTOMER) throws ApiException {
-        ApiResponse<FINCUSTOMER> localVarResp = fINCUSTOMERV1ControllerCreateWithHttpInfo(FINCUSTOMER);
+    public Customer customerV1ControllerCreate(Customer customer) throws ApiException {
+        ApiResponse<Customer> localVarResp = customerV1ControllerCreateWithHttpInfo(customer);
         return localVarResp.getData();
     }
 
     /**
      * 
      * 
-     * @param FINCUSTOMER  (optional)
-     * @return ApiResponse&lt;FINCUSTOMER&gt;
+     * @param customer  (optional)
+     * @return ApiResponse&lt;Customer&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> FIN_CUSTOMER model instance </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Customer model instance </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FINCUSTOMER> fINCUSTOMERV1ControllerCreateWithHttpInfo(FINCUSTOMER FINCUSTOMER) throws ApiException {
-        okhttp3.Call localVarCall = fINCUSTOMERV1ControllerCreateValidateBeforeCall(FINCUSTOMER, null);
-        Type localVarReturnType = new TypeToken<FINCUSTOMER>(){}.getType();
+    public ApiResponse<Customer> customerV1ControllerCreateWithHttpInfo(Customer customer) throws ApiException {
+        okhttp3.Call localVarCall = customerV1ControllerCreateValidateBeforeCall(customer, null);
+        Type localVarReturnType = new TypeToken<Customer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      *  (asynchronously)
      * 
-     * @param FINCUSTOMER  (optional)
+     * @param customer  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> FIN_CUSTOMER model instance </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Customer model instance </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call fINCUSTOMERV1ControllerCreateAsync(FINCUSTOMER FINCUSTOMER, final ApiCallback<FINCUSTOMER> _callback) throws ApiException {
+    public okhttp3.Call customerV1ControllerCreateAsync(Customer customer, final ApiCallback<Customer> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = fINCUSTOMERV1ControllerCreateValidateBeforeCall(FINCUSTOMER, _callback);
-        Type localVarReturnType = new TypeToken<FINCUSTOMER>(){}.getType();
+        okhttp3.Call localVarCall = customerV1ControllerCreateValidateBeforeCall(customer, _callback);
+        Type localVarReturnType = new TypeToken<Customer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for fINCUSTOMERV1ControllerDeleteById
+     * Build call for customerV1ControllerDeleteById
      * @param id  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -170,14 +170,14 @@ public class FinCustomerV1Api {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> FIN_CUSTOMER DELETE success </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Customer DELETE success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call fINCUSTOMERV1ControllerDeleteByIdCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call customerV1ControllerDeleteByIdCall(String id, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
-        String localVarPath = "/api/v1/FIN_CUSTOMER/{id}"
+        String localVarPath = "/api/v1/Customer/{id}"
             .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -204,15 +204,15 @@ public class FinCustomerV1Api {
 
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call fINCUSTOMERV1ControllerDeleteByIdValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call customerV1ControllerDeleteByIdValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling fINCUSTOMERV1ControllerDeleteById(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling customerV1ControllerDeleteById(Async)");
         }
         
 
-        okhttp3.Call localVarCall = fINCUSTOMERV1ControllerDeleteByIdCall(id, _callback);
+        okhttp3.Call localVarCall = customerV1ControllerDeleteByIdCall(id, _callback);
         return localVarCall;
 
     }
@@ -225,11 +225,11 @@ public class FinCustomerV1Api {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> FIN_CUSTOMER DELETE success </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Customer DELETE success </td><td>  -  </td></tr>
      </table>
      */
-    public void fINCUSTOMERV1ControllerDeleteById(String id) throws ApiException {
-        fINCUSTOMERV1ControllerDeleteByIdWithHttpInfo(id);
+    public void customerV1ControllerDeleteById(String id) throws ApiException {
+        customerV1ControllerDeleteByIdWithHttpInfo(id);
     }
 
     /**
@@ -241,11 +241,11 @@ public class FinCustomerV1Api {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> FIN_CUSTOMER DELETE success </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Customer DELETE success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> fINCUSTOMERV1ControllerDeleteByIdWithHttpInfo(String id) throws ApiException {
-        okhttp3.Call localVarCall = fINCUSTOMERV1ControllerDeleteByIdValidateBeforeCall(id, null);
+    public ApiResponse<Void> customerV1ControllerDeleteByIdWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = customerV1ControllerDeleteByIdValidateBeforeCall(id, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -259,17 +259,17 @@ public class FinCustomerV1Api {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> FIN_CUSTOMER DELETE success </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Customer DELETE success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call fINCUSTOMERV1ControllerDeleteByIdAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call customerV1ControllerDeleteByIdAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = fINCUSTOMERV1ControllerDeleteByIdValidateBeforeCall(id, _callback);
+        okhttp3.Call localVarCall = customerV1ControllerDeleteByIdValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for fINCUSTOMERV1ControllerFindById
+     * Build call for customerV1ControllerFindById
      * @param id  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -277,14 +277,14 @@ public class FinCustomerV1Api {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> FIN_CUSTOMER model instance </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Customer model instance </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call fINCUSTOMERV1ControllerFindByIdCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call customerV1ControllerFindByIdCall(String id, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
-        String localVarPath = "/api/v1/FIN_CUSTOMER/{id}"
+        String localVarPath = "/api/v1/Customer/{id}"
             .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -311,15 +311,15 @@ public class FinCustomerV1Api {
 
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call fINCUSTOMERV1ControllerFindByIdValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call customerV1ControllerFindByIdValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling fINCUSTOMERV1ControllerFindById(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling customerV1ControllerFindById(Async)");
         }
         
 
-        okhttp3.Call localVarCall = fINCUSTOMERV1ControllerFindByIdCall(id, _callback);
+        okhttp3.Call localVarCall = customerV1ControllerFindByIdCall(id, _callback);
         return localVarCall;
 
     }
@@ -328,16 +328,16 @@ public class FinCustomerV1Api {
      * get record by id
      * 
      * @param id  (required)
-     * @return FINCUSTOMER
+     * @return Customer
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> FIN_CUSTOMER model instance </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Customer model instance </td><td>  -  </td></tr>
      </table>
      */
-    public FINCUSTOMER fINCUSTOMERV1ControllerFindById(String id) throws ApiException {
-        ApiResponse<FINCUSTOMER> localVarResp = fINCUSTOMERV1ControllerFindByIdWithHttpInfo(id);
+    public Customer customerV1ControllerFindById(String id) throws ApiException {
+        ApiResponse<Customer> localVarResp = customerV1ControllerFindByIdWithHttpInfo(id);
         return localVarResp.getData();
     }
 
@@ -345,17 +345,17 @@ public class FinCustomerV1Api {
      * get record by id
      * 
      * @param id  (required)
-     * @return ApiResponse&lt;FINCUSTOMER&gt;
+     * @return ApiResponse&lt;Customer&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> FIN_CUSTOMER model instance </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Customer model instance </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FINCUSTOMER> fINCUSTOMERV1ControllerFindByIdWithHttpInfo(String id) throws ApiException {
-        okhttp3.Call localVarCall = fINCUSTOMERV1ControllerFindByIdValidateBeforeCall(id, null);
-        Type localVarReturnType = new TypeToken<FINCUSTOMER>(){}.getType();
+    public ApiResponse<Customer> customerV1ControllerFindByIdWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = customerV1ControllerFindByIdValidateBeforeCall(id, null);
+        Type localVarReturnType = new TypeToken<Customer>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -369,18 +369,18 @@ public class FinCustomerV1Api {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> FIN_CUSTOMER model instance </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Customer model instance </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call fINCUSTOMERV1ControllerFindByIdAsync(String id, final ApiCallback<FINCUSTOMER> _callback) throws ApiException {
+    public okhttp3.Call customerV1ControllerFindByIdAsync(String id, final ApiCallback<Customer> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = fINCUSTOMERV1ControllerFindByIdValidateBeforeCall(id, _callback);
-        Type localVarReturnType = new TypeToken<FINCUSTOMER>(){}.getType();
+        okhttp3.Call localVarCall = customerV1ControllerFindByIdValidateBeforeCall(id, _callback);
+        Type localVarReturnType = new TypeToken<Customer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for fINCUSTOMERV1ControllerFindPage
+     * Build call for customerV1ControllerFindPage
      * @param filter  (optional, default to null)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -388,14 +388,14 @@ public class FinCustomerV1Api {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Object of page data, result.data is FIN_CUSTOMER model instances, result.total is model count. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Object of page data, result.data is Customer model instances, result.total is model count. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call fINCUSTOMERV1ControllerFindPageCall(Filter filter, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call customerV1ControllerFindPageCall(Filter filter, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
-        String localVarPath = "/api/v1/FIN_CUSTOMER";
+        String localVarPath = "/api/v1/Customer";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -453,10 +453,10 @@ public class FinCustomerV1Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call fINCUSTOMERV1ControllerFindPageValidateBeforeCall(Filter filter, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call customerV1ControllerFindPageValidateBeforeCall(Filter filter, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = fINCUSTOMERV1ControllerFindPageCall(filter, _callback);
+        okhttp3.Call localVarCall = customerV1ControllerFindPageCall(filter, _callback);
         return localVarCall;
 
     }
@@ -470,11 +470,11 @@ public class FinCustomerV1Api {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Object of page data, result.data is FIN_CUSTOMER model instances, result.total is model count. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Object of page data, result.data is Customer model instances, result.total is model count. </td><td>  -  </td></tr>
      </table>
      */
-    public InlineResponse200 fINCUSTOMERV1ControllerFindPage(Filter filter) throws ApiException {
-        ApiResponse<InlineResponse200> localVarResp = fINCUSTOMERV1ControllerFindPageWithHttpInfo(filter);
+    public InlineResponse200 customerV1ControllerFindPage(Filter filter) throws ApiException {
+        ApiResponse<InlineResponse200> localVarResp = customerV1ControllerFindPageWithHttpInfo(filter);
         return localVarResp.getData();
     }
 
@@ -487,11 +487,11 @@ public class FinCustomerV1Api {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Object of page data, result.data is FIN_CUSTOMER model instances, result.total is model count. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Object of page data, result.data is Customer model instances, result.total is model count. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InlineResponse200> fINCUSTOMERV1ControllerFindPageWithHttpInfo(Filter filter) throws ApiException {
-        okhttp3.Call localVarCall = fINCUSTOMERV1ControllerFindPageValidateBeforeCall(filter, null);
+    public ApiResponse<InlineResponse200> customerV1ControllerFindPageWithHttpInfo(Filter filter) throws ApiException {
+        okhttp3.Call localVarCall = customerV1ControllerFindPageValidateBeforeCall(filter, null);
         Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -506,34 +506,34 @@ public class FinCustomerV1Api {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Object of page data, result.data is FIN_CUSTOMER model instances, result.total is model count. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Object of page data, result.data is Customer model instances, result.total is model count. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call fINCUSTOMERV1ControllerFindPageAsync(Filter filter, final ApiCallback<InlineResponse200> _callback) throws ApiException {
+    public okhttp3.Call customerV1ControllerFindPageAsync(Filter filter, final ApiCallback<InlineResponse200> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = fINCUSTOMERV1ControllerFindPageValidateBeforeCall(filter, _callback);
+        okhttp3.Call localVarCall = customerV1ControllerFindPageValidateBeforeCall(filter, _callback);
         Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for fINCUSTOMERV1ControllerUpdateById
+     * Build call for customerV1ControllerUpdateById
      * @param id  (required)
-     * @param FINCUSTOMER  (optional)
+     * @param customer  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> FIN_CUSTOMER PATCH success </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Customer PATCH success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call fINCUSTOMERV1ControllerUpdateByIdCall(String id, FINCUSTOMER FINCUSTOMER, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = FINCUSTOMER;
+    public okhttp3.Call customerV1ControllerUpdateByIdCall(String id, Customer customer, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = customer;
 
         // create path and map variables
-        String localVarPath = "/api/v1/FIN_CUSTOMER/{id}"
+        String localVarPath = "/api/v1/Customer/{id}"
             .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -560,15 +560,15 @@ public class FinCustomerV1Api {
 
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call fINCUSTOMERV1ControllerUpdateByIdValidateBeforeCall(String id, FINCUSTOMER FINCUSTOMER, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call customerV1ControllerUpdateByIdValidateBeforeCall(String id, Customer customer, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling fINCUSTOMERV1ControllerUpdateById(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling customerV1ControllerUpdateById(Async)");
         }
         
 
-        okhttp3.Call localVarCall = fINCUSTOMERV1ControllerUpdateByIdCall(id, FINCUSTOMER, _callback);
+        okhttp3.Call localVarCall = customerV1ControllerUpdateByIdCall(id, customer, _callback);
         return localVarCall;
 
     }
@@ -577,33 +577,33 @@ public class FinCustomerV1Api {
      * update record by id
      * 
      * @param id  (required)
-     * @param FINCUSTOMER  (optional)
+     * @param customer  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> FIN_CUSTOMER PATCH success </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Customer PATCH success </td><td>  -  </td></tr>
      </table>
      */
-    public void fINCUSTOMERV1ControllerUpdateById(String id, FINCUSTOMER FINCUSTOMER) throws ApiException {
-        fINCUSTOMERV1ControllerUpdateByIdWithHttpInfo(id, FINCUSTOMER);
+    public void customerV1ControllerUpdateById(String id, Customer customer) throws ApiException {
+        customerV1ControllerUpdateByIdWithHttpInfo(id, customer);
     }
 
     /**
      * update record by id
      * 
      * @param id  (required)
-     * @param FINCUSTOMER  (optional)
+     * @param customer  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> FIN_CUSTOMER PATCH success </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Customer PATCH success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> fINCUSTOMERV1ControllerUpdateByIdWithHttpInfo(String id, FINCUSTOMER FINCUSTOMER) throws ApiException {
-        okhttp3.Call localVarCall = fINCUSTOMERV1ControllerUpdateByIdValidateBeforeCall(id, FINCUSTOMER, null);
+    public ApiResponse<Void> customerV1ControllerUpdateByIdWithHttpInfo(String id, Customer customer) throws ApiException {
+        okhttp3.Call localVarCall = customerV1ControllerUpdateByIdValidateBeforeCall(id, customer, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -611,19 +611,19 @@ public class FinCustomerV1Api {
      * update record by id (asynchronously)
      * 
      * @param id  (required)
-     * @param FINCUSTOMER  (optional)
+     * @param customer  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> FIN_CUSTOMER PATCH success </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> Customer PATCH success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call fINCUSTOMERV1ControllerUpdateByIdAsync(String id, FINCUSTOMER FINCUSTOMER, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call customerV1ControllerUpdateByIdAsync(String id, Customer customer, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = fINCUSTOMERV1ControllerUpdateByIdValidateBeforeCall(id, FINCUSTOMER, _callback);
+        okhttp3.Call localVarCall = customerV1ControllerUpdateByIdValidateBeforeCall(id, customer, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }

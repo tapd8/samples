@@ -15,7 +15,10 @@ package io.tapdata.sdk.api;
 
 import io.tapdata.sdk.ApiException;
 import io.tapdata.sdk.ApiClient;
-import io.tapdata.sdk.model.*;
+import io.tapdata.sdk.model.ApiV1TransactionLogFields;
+import io.tapdata.sdk.model.Filter1;
+import io.tapdata.sdk.model.InlineResponse2001;
+import io.tapdata.sdk.model.TransactionLog;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.BeforeClass;
@@ -51,18 +54,18 @@ public class TransactionLogV1ApiTest {
 
     @BeforeClass
     public static void setUpBeforeClass(){
-        id = System.getProperty("transaction_id");
+        id = System.getProperty("transaction_id") == null ? "" : System.getProperty("customer_id");
         customerId = StringUtils.isNoneBlank(System.getProperty("customer_id")) ? System.getProperty("customer_id") : "C000079948";
         shop = StringUtils.isNoneBlank(System.getProperty("shop")) ? System.getProperty("shop") : "LV";
         limit = System.getProperty("limit") == null ? 5 : Integer.parseInt(System.getProperty("limit"));
         skip = System.getProperty("skip") == null ? 0 : Integer.parseInt(System.getProperty("skip"));
     }
 
-    
+
     /**
-     * 
      *
-     * 
+     *
+     *
      *
      * @throws ApiException
      *          if the Api call fails
@@ -82,11 +85,11 @@ public class TransactionLogV1ApiTest {
         id = response.getId();
         System.out.println("\n\n");
     }
-    
+
     /**
      * delete record by id
      *
-     * 
+     *
      *
      * @throws ApiException
      *          if the Api call fails
@@ -98,11 +101,11 @@ public class TransactionLogV1ApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * get record by id
      *
-     * 
+     *
      *
      * @throws ApiException
      *          if the Api call fails
@@ -117,11 +120,11 @@ public class TransactionLogV1ApiTest {
         System.out.println(response.toString());
         System.out.println("\n\n");
     }
-    
+
     /**
      * get record list by page and limit
      *
-     * 
+     *
      *
      * @throws ApiException
      *          if the Api call fails
@@ -167,6 +170,7 @@ public class TransactionLogV1ApiTest {
         ApiV1TransactionLogFields fields = new ApiV1TransactionLogFields();
         fields.setId(true);
         fields.setCUSTOMERID(true);
+        fields.setAMOUNT(true);
         filter.setFields(fields);
 
         InlineResponse2001 response = api.transactionLogV1ControllerFindPage(filter);
@@ -181,11 +185,11 @@ public class TransactionLogV1ApiTest {
         }
         System.out.println("\n\n");
     }
-    
+
     /**
      * update record by id
      *
-     * 
+     *
      *
      * @throws ApiException
      *          if the Api call fails

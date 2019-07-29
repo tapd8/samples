@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Filter1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-25T11:25:22.813+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-29T11:08:48.431+08:00[Asia/Shanghai]")
 public class Filter1 {
   public static final String SERIALIZED_NAME_WHERE = "where";
   @SerializedName(SERIALIZED_NAME_WHERE)
@@ -205,6 +205,7 @@ public class Filter1 {
     sb.append("class Filter1 {\n");
     sb.append("    where: ").append(toIndentedString(where)).append("\n");
     sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
+    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("    skip: ").append(toIndentedString(skip)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");

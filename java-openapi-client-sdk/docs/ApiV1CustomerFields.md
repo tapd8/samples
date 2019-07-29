@@ -1,20 +1,19 @@
 
 
-# ApiV1FINCUSTOMERFields
+# ApiV1CustomerFields
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Boolean** |  |  [optional]
+**CUSTOMER_ID** | **Boolean** |  |  [optional]
 **CITY** | **Boolean** |  |  [optional]
 **COUNTRY_CODE** | **Boolean** |  |  [optional]
-**CUSTOMER_ID** | **Boolean** |  |  [optional]
 **DATE_OF_BIRTH** | **Boolean** |  |  [optional]
 **EMAIL** | **Boolean** |  |  [optional]
 **FIRST_NAME** | **Boolean** |  |  [optional]
 **GENDER** | **Boolean** |  |  [optional]
-**HOME_INSURANCE** | **Boolean** |  |  [optional]
 **JOB** | **Boolean** |  |  [optional]
 **LAST_CHANGE** | **Boolean** |  |  [optional]
 **LAST_NAME** | **Boolean** |  |  [optional]
@@ -24,7 +23,6 @@ Name | Type | Description | Notes
 **PHONE** | **Boolean** |  |  [optional]
 **STREET** | **Boolean** |  |  [optional]
 **ZIP** | **Boolean** |  |  [optional]
-**CAR_INSURANCE** | **Boolean** |  |  [optional]
 
 
 

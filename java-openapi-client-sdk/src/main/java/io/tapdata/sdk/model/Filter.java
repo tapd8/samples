@@ -22,7 +22,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.tapdata.sdk.model.ApiV1FINCUSTOMERFields;
+import io.tapdata.sdk.model.ApiV1CustomerFields;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Filter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-25T11:25:22.813+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-29T11:08:48.431+08:00[Asia/Shanghai]")
 public class Filter {
   public static final String SERIALIZED_NAME_WHERE = "where";
   @SerializedName(SERIALIZED_NAME_WHERE)
@@ -38,7 +38,7 @@ public class Filter {
 
   public static final String SERIALIZED_NAME_FIELDS = "fields";
   @SerializedName(SERIALIZED_NAME_FIELDS)
-  private ApiV1FINCUSTOMERFields fields = null;
+  private ApiV1CustomerFields fields = null;
 
   public static final String SERIALIZED_NAME_OFFSET = "offset";
   @SerializedName(SERIALIZED_NAME_OFFSET)
@@ -74,7 +74,7 @@ public class Filter {
     this.where = where;
   }
 
-  public Filter fields(ApiV1FINCUSTOMERFields fields) {
+  public Filter fields(ApiV1CustomerFields fields) {
     this.fields = fields;
     return this;
   }
@@ -84,11 +84,11 @@ public class Filter {
    * @return fields
   **/
   @ApiModelProperty(value = "")
-  public ApiV1FINCUSTOMERFields getFields() {
+  public ApiV1CustomerFields getFields() {
     return fields;
   }
 
-  public void setFields(ApiV1FINCUSTOMERFields fields) {
+  public void setFields(ApiV1CustomerFields fields) {
     this.fields = fields;
   }
 

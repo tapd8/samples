@@ -22,8 +22,6 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 import org.threeten.bp.OffsetDateTime;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -31,17 +29,17 @@ import org.junit.Test;
 
 
 /**
- * Model tests for FINCUSTOMER
+ * Model tests for Customer
  */
-public class FINCUSTOMERTest {
-    private final FINCUSTOMER model = new FINCUSTOMER();
+public class CustomerTest {
+    private final Customer model = new Customer();
 
     /**
-     * Model tests for FINCUSTOMER
+     * Model tests for Customer
      */
     @Test
-    public void testFINCUSTOMER() {
-        // TODO: test FINCUSTOMER
+    public void testCustomer() {
+        // TODO: test Customer
     }
 
     /**
@@ -50,6 +48,14 @@ public class FINCUSTOMERTest {
     @Test
     public void idTest() {
         // TODO: test id
+    }
+
+    /**
+     * Test the property 'CUSTOMER_ID'
+     */
+    @Test
+    public void CUSTOMER_IDTest() {
+        // TODO: test CUSTOMER_ID
     }
 
     /**
@@ -66,14 +72,6 @@ public class FINCUSTOMERTest {
     @Test
     public void COUNTRY_CODETest() {
         // TODO: test COUNTRY_CODE
-    }
-
-    /**
-     * Test the property 'CUSTOMER_ID'
-     */
-    @Test
-    public void CUSTOMER_IDTest() {
-        // TODO: test CUSTOMER_ID
     }
 
     /**
@@ -106,14 +104,6 @@ public class FINCUSTOMERTest {
     @Test
     public void GENDERTest() {
         // TODO: test GENDER
-    }
-
-    /**
-     * Test the property 'HOME_INSURANCE'
-     */
-    @Test
-    public void HOME_INSURANCETest() {
-        // TODO: test HOME_INSURANCE
     }
 
     /**
@@ -186,14 +176,6 @@ public class FINCUSTOMERTest {
     @Test
     public void ZIPTest() {
         // TODO: test ZIP
-    }
-
-    /**
-     * Test the property 'CAR_INSURANCE'
-     */
-    @Test
-    public void CAR_INSURANCETest() {
-        // TODO: test CAR_INSURANCE
     }
 
 }

@@ -27,17 +27,17 @@ import org.junit.Test;
 
 
 /**
- * Model tests for ApiV1FINCUSTOMERFields
+ * Model tests for ApiV1CustomerFields
  */
-public class ApiV1FINCUSTOMERFieldsTest {
-    private final ApiV1FINCUSTOMERFields model = new ApiV1FINCUSTOMERFields();
+public class ApiV1CustomerFieldsTest {
+    private final ApiV1CustomerFields model = new ApiV1CustomerFields();
 
     /**
-     * Model tests for ApiV1FINCUSTOMERFields
+     * Model tests for ApiV1CustomerFields
      */
     @Test
-    public void testApiV1FINCUSTOMERFields() {
-        // TODO: test ApiV1FINCUSTOMERFields
+    public void testApiV1CustomerFields() {
+        // TODO: test ApiV1CustomerFields
     }
 
     /**
@@ -46,6 +46,14 @@ public class ApiV1FINCUSTOMERFieldsTest {
     @Test
     public void idTest() {
         // TODO: test id
+    }
+
+    /**
+     * Test the property 'CUSTOMER_ID'
+     */
+    @Test
+    public void CUSTOMER_IDTest() {
+        // TODO: test CUSTOMER_ID
     }
 
     /**
@@ -62,14 +70,6 @@ public class ApiV1FINCUSTOMERFieldsTest {
     @Test
     public void COUNTRY_CODETest() {
         // TODO: test COUNTRY_CODE
-    }
-
-    /**
-     * Test the property 'CUSTOMER_ID'
-     */
-    @Test
-    public void CUSTOMER_IDTest() {
-        // TODO: test CUSTOMER_ID
     }
 
     /**
@@ -102,14 +102,6 @@ public class ApiV1FINCUSTOMERFieldsTest {
     @Test
     public void GENDERTest() {
         // TODO: test GENDER
-    }
-
-    /**
-     * Test the property 'HOME_INSURANCE'
-     */
-    @Test
-    public void HOME_INSURANCETest() {
-        // TODO: test HOME_INSURANCE
     }
 
     /**
@@ -182,14 +174,6 @@ public class ApiV1FINCUSTOMERFieldsTest {
     @Test
     public void ZIPTest() {
         // TODO: test ZIP
-    }
-
-    /**
-     * Test the property 'CAR_INSURANCE'
-     */
-    @Test
-    public void CAR_INSURANCETest() {
-        // TODO: test CAR_INSURANCE
     }
 
 }

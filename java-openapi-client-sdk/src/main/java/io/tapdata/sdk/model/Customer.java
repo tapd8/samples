@@ -23,89 +23,83 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
+import org.threeten.bp.OffsetDateTime;
 
 /**
- * ApiV1FINCUSTOMERFields
+ * Customer
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-25T11:25:22.813+08:00[Asia/Shanghai]")
-public class ApiV1FINCUSTOMERFields {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-29T11:08:48.431+08:00[Asia/Shanghai]")
+public class Customer {
   public static final String SERIALIZED_NAME_ID = "_id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private Boolean id;
-
-  public static final String SERIALIZED_NAME_C_I_T_Y = "CITY";
-  @SerializedName(SERIALIZED_NAME_C_I_T_Y)
-  private Boolean CITY;
-
-  public static final String SERIALIZED_NAME_C_O_U_N_T_R_Y_C_O_D_E = "COUNTRY_CODE";
-  @SerializedName(SERIALIZED_NAME_C_O_U_N_T_R_Y_C_O_D_E)
-  private Boolean COUNTRY_CODE;
+  private String id;
 
   public static final String SERIALIZED_NAME_C_U_S_T_O_M_E_R_I_D = "CUSTOMER_ID";
   @SerializedName(SERIALIZED_NAME_C_U_S_T_O_M_E_R_I_D)
-  private Boolean CUSTOMER_ID;
+  private String CUSTOMER_ID;
+
+  public static final String SERIALIZED_NAME_C_I_T_Y = "CITY";
+  @SerializedName(SERIALIZED_NAME_C_I_T_Y)
+  private String CITY;
+
+  public static final String SERIALIZED_NAME_C_O_U_N_T_R_Y_C_O_D_E = "COUNTRY_CODE";
+  @SerializedName(SERIALIZED_NAME_C_O_U_N_T_R_Y_C_O_D_E)
+  private String COUNTRY_CODE;
 
   public static final String SERIALIZED_NAME_D_A_T_E_O_F_B_I_R_T_H = "DATE_OF_BIRTH";
   @SerializedName(SERIALIZED_NAME_D_A_T_E_O_F_B_I_R_T_H)
-  private Boolean DATE_OF_BIRTH;
+  private OffsetDateTime DATE_OF_BIRTH;
 
   public static final String SERIALIZED_NAME_E_M_A_I_L = "EMAIL";
   @SerializedName(SERIALIZED_NAME_E_M_A_I_L)
-  private Boolean EMAIL;
+  private String EMAIL;
 
   public static final String SERIALIZED_NAME_F_I_R_S_T_N_A_M_E = "FIRST_NAME";
   @SerializedName(SERIALIZED_NAME_F_I_R_S_T_N_A_M_E)
-  private Boolean FIRST_NAME;
+  private String FIRST_NAME;
 
   public static final String SERIALIZED_NAME_G_E_N_D_E_R = "GENDER";
   @SerializedName(SERIALIZED_NAME_G_E_N_D_E_R)
-  private Boolean GENDER;
-
-  public static final String SERIALIZED_NAME_H_O_M_E_I_N_S_U_R_A_N_C_E = "HOME_INSURANCE";
-  @SerializedName(SERIALIZED_NAME_H_O_M_E_I_N_S_U_R_A_N_C_E)
-  private Boolean HOME_INSURANCE;
+  private String GENDER;
 
   public static final String SERIALIZED_NAME_J_O_B = "JOB";
   @SerializedName(SERIALIZED_NAME_J_O_B)
-  private Boolean JOB;
+  private String JOB;
 
   public static final String SERIALIZED_NAME_L_A_S_T_C_H_A_N_G_E = "LAST_CHANGE";
   @SerializedName(SERIALIZED_NAME_L_A_S_T_C_H_A_N_G_E)
-  private Boolean LAST_CHANGE;
+  private OffsetDateTime LAST_CHANGE;
 
   public static final String SERIALIZED_NAME_L_A_S_T_N_A_M_E = "LAST_NAME";
   @SerializedName(SERIALIZED_NAME_L_A_S_T_N_A_M_E)
-  private Boolean LAST_NAME;
+  private String LAST_NAME;
 
   public static final String SERIALIZED_NAME_M_A_R_I_T_A_L_S_T_A_T_U_S = "MARITAL_STATUS";
   @SerializedName(SERIALIZED_NAME_M_A_R_I_T_A_L_S_T_A_T_U_S)
-  private Boolean MARITAL_STATUS;
+  private String MARITAL_STATUS;
 
   public static final String SERIALIZED_NAME_N_A_T_I_O_N_A_L_I_T_Y = "NATIONALITY";
   @SerializedName(SERIALIZED_NAME_N_A_T_I_O_N_A_L_I_T_Y)
-  private Boolean NATIONALITY;
+  private String NATIONALITY;
 
   public static final String SERIALIZED_NAME_N_U_M_B_E_R_C_H_I_L_D_R_E_N = "NUMBER_CHILDREN";
   @SerializedName(SERIALIZED_NAME_N_U_M_B_E_R_C_H_I_L_D_R_E_N)
-  private Boolean NUMBER_CHILDREN;
+  private BigDecimal NUMBER_CHILDREN;
 
   public static final String SERIALIZED_NAME_P_H_O_N_E = "PHONE";
   @SerializedName(SERIALIZED_NAME_P_H_O_N_E)
-  private Boolean PHONE;
+  private String PHONE;
 
   public static final String SERIALIZED_NAME_S_T_R_E_E_T = "STREET";
   @SerializedName(SERIALIZED_NAME_S_T_R_E_E_T)
-  private Boolean STREET;
+  private String STREET;
 
   public static final String SERIALIZED_NAME_Z_I_P = "ZIP";
   @SerializedName(SERIALIZED_NAME_Z_I_P)
-  private Boolean ZIP;
+  private String ZIP;
 
-  public static final String SERIALIZED_NAME_C_A_R_I_N_S_U_R_A_N_C_E = "CAR_INSURANCE";
-  @SerializedName(SERIALIZED_NAME_C_A_R_I_N_S_U_R_A_N_C_E)
-  private Boolean CAR_INSURANCE;
-
-  public ApiV1FINCUSTOMERFields id(Boolean id) {
+  public Customer id(String id) {
     this.id = id;
     return this;
   }
@@ -115,51 +109,15 @@ public class ApiV1FINCUSTOMERFields {
    * @return id
   **/
   @ApiModelProperty(value = "")
-  public Boolean getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(Boolean id) {
+  public void setId(String id) {
     this.id = id;
   }
 
-  public ApiV1FINCUSTOMERFields CITY(Boolean CITY) {
-    this.CITY = CITY;
-    return this;
-  }
-
-   /**
-   * Get CITY
-   * @return CITY
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean getCITY() {
-    return CITY;
-  }
-
-  public void setCITY(Boolean CITY) {
-    this.CITY = CITY;
-  }
-
-  public ApiV1FINCUSTOMERFields COUNTRY_CODE(Boolean COUNTRY_CODE) {
-    this.COUNTRY_CODE = COUNTRY_CODE;
-    return this;
-  }
-
-   /**
-   * Get COUNTRY_CODE
-   * @return COUNTRY_CODE
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean getCOUNTRYCODE() {
-    return COUNTRY_CODE;
-  }
-
-  public void setCOUNTRYCODE(Boolean COUNTRY_CODE) {
-    this.COUNTRY_CODE = COUNTRY_CODE;
-  }
-
-  public ApiV1FINCUSTOMERFields CUSTOMER_ID(Boolean CUSTOMER_ID) {
+  public Customer CUSTOMER_ID(String CUSTOMER_ID) {
     this.CUSTOMER_ID = CUSTOMER_ID;
     return this;
   }
@@ -169,15 +127,51 @@ public class ApiV1FINCUSTOMERFields {
    * @return CUSTOMER_ID
   **/
   @ApiModelProperty(value = "")
-  public Boolean getCUSTOMERID() {
+  public String getCUSTOMERID() {
     return CUSTOMER_ID;
   }
 
-  public void setCUSTOMERID(Boolean CUSTOMER_ID) {
+  public void setCUSTOMERID(String CUSTOMER_ID) {
     this.CUSTOMER_ID = CUSTOMER_ID;
   }
 
-  public ApiV1FINCUSTOMERFields DATE_OF_BIRTH(Boolean DATE_OF_BIRTH) {
+  public Customer CITY(String CITY) {
+    this.CITY = CITY;
+    return this;
+  }
+
+   /**
+   * Get CITY
+   * @return CITY
+  **/
+  @ApiModelProperty(value = "")
+  public String getCITY() {
+    return CITY;
+  }
+
+  public void setCITY(String CITY) {
+    this.CITY = CITY;
+  }
+
+  public Customer COUNTRY_CODE(String COUNTRY_CODE) {
+    this.COUNTRY_CODE = COUNTRY_CODE;
+    return this;
+  }
+
+   /**
+   * Get COUNTRY_CODE
+   * @return COUNTRY_CODE
+  **/
+  @ApiModelProperty(value = "")
+  public String getCOUNTRYCODE() {
+    return COUNTRY_CODE;
+  }
+
+  public void setCOUNTRYCODE(String COUNTRY_CODE) {
+    this.COUNTRY_CODE = COUNTRY_CODE;
+  }
+
+  public Customer DATE_OF_BIRTH(OffsetDateTime DATE_OF_BIRTH) {
     this.DATE_OF_BIRTH = DATE_OF_BIRTH;
     return this;
   }
@@ -187,15 +181,15 @@ public class ApiV1FINCUSTOMERFields {
    * @return DATE_OF_BIRTH
   **/
   @ApiModelProperty(value = "")
-  public Boolean getDATEOFBIRTH() {
+  public OffsetDateTime getDATEOFBIRTH() {
     return DATE_OF_BIRTH;
   }
 
-  public void setDATEOFBIRTH(Boolean DATE_OF_BIRTH) {
+  public void setDATEOFBIRTH(OffsetDateTime DATE_OF_BIRTH) {
     this.DATE_OF_BIRTH = DATE_OF_BIRTH;
   }
 
-  public ApiV1FINCUSTOMERFields EMAIL(Boolean EMAIL) {
+  public Customer EMAIL(String EMAIL) {
     this.EMAIL = EMAIL;
     return this;
   }
@@ -205,15 +199,15 @@ public class ApiV1FINCUSTOMERFields {
    * @return EMAIL
   **/
   @ApiModelProperty(value = "")
-  public Boolean getEMAIL() {
+  public String getEMAIL() {
     return EMAIL;
   }
 
-  public void setEMAIL(Boolean EMAIL) {
+  public void setEMAIL(String EMAIL) {
     this.EMAIL = EMAIL;
   }
 
-  public ApiV1FINCUSTOMERFields FIRST_NAME(Boolean FIRST_NAME) {
+  public Customer FIRST_NAME(String FIRST_NAME) {
     this.FIRST_NAME = FIRST_NAME;
     return this;
   }
@@ -223,15 +217,15 @@ public class ApiV1FINCUSTOMERFields {
    * @return FIRST_NAME
   **/
   @ApiModelProperty(value = "")
-  public Boolean getFIRSTNAME() {
+  public String getFIRSTNAME() {
     return FIRST_NAME;
   }
 
-  public void setFIRSTNAME(Boolean FIRST_NAME) {
+  public void setFIRSTNAME(String FIRST_NAME) {
     this.FIRST_NAME = FIRST_NAME;
   }
 
-  public ApiV1FINCUSTOMERFields GENDER(Boolean GENDER) {
+  public Customer GENDER(String GENDER) {
     this.GENDER = GENDER;
     return this;
   }
@@ -241,33 +235,15 @@ public class ApiV1FINCUSTOMERFields {
    * @return GENDER
   **/
   @ApiModelProperty(value = "")
-  public Boolean getGENDER() {
+  public String getGENDER() {
     return GENDER;
   }
 
-  public void setGENDER(Boolean GENDER) {
+  public void setGENDER(String GENDER) {
     this.GENDER = GENDER;
   }
 
-  public ApiV1FINCUSTOMERFields HOME_INSURANCE(Boolean HOME_INSURANCE) {
-    this.HOME_INSURANCE = HOME_INSURANCE;
-    return this;
-  }
-
-   /**
-   * Get HOME_INSURANCE
-   * @return HOME_INSURANCE
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean getHOMEINSURANCE() {
-    return HOME_INSURANCE;
-  }
-
-  public void setHOMEINSURANCE(Boolean HOME_INSURANCE) {
-    this.HOME_INSURANCE = HOME_INSURANCE;
-  }
-
-  public ApiV1FINCUSTOMERFields JOB(Boolean JOB) {
+  public Customer JOB(String JOB) {
     this.JOB = JOB;
     return this;
   }
@@ -277,15 +253,15 @@ public class ApiV1FINCUSTOMERFields {
    * @return JOB
   **/
   @ApiModelProperty(value = "")
-  public Boolean getJOB() {
+  public String getJOB() {
     return JOB;
   }
 
-  public void setJOB(Boolean JOB) {
+  public void setJOB(String JOB) {
     this.JOB = JOB;
   }
 
-  public ApiV1FINCUSTOMERFields LAST_CHANGE(Boolean LAST_CHANGE) {
+  public Customer LAST_CHANGE(OffsetDateTime LAST_CHANGE) {
     this.LAST_CHANGE = LAST_CHANGE;
     return this;
   }
@@ -295,15 +271,15 @@ public class ApiV1FINCUSTOMERFields {
    * @return LAST_CHANGE
   **/
   @ApiModelProperty(value = "")
-  public Boolean getLASTCHANGE() {
+  public OffsetDateTime getLASTCHANGE() {
     return LAST_CHANGE;
   }
 
-  public void setLASTCHANGE(Boolean LAST_CHANGE) {
+  public void setLASTCHANGE(OffsetDateTime LAST_CHANGE) {
     this.LAST_CHANGE = LAST_CHANGE;
   }
 
-  public ApiV1FINCUSTOMERFields LAST_NAME(Boolean LAST_NAME) {
+  public Customer LAST_NAME(String LAST_NAME) {
     this.LAST_NAME = LAST_NAME;
     return this;
   }
@@ -313,15 +289,15 @@ public class ApiV1FINCUSTOMERFields {
    * @return LAST_NAME
   **/
   @ApiModelProperty(value = "")
-  public Boolean getLASTNAME() {
+  public String getLASTNAME() {
     return LAST_NAME;
   }
 
-  public void setLASTNAME(Boolean LAST_NAME) {
+  public void setLASTNAME(String LAST_NAME) {
     this.LAST_NAME = LAST_NAME;
   }
 
-  public ApiV1FINCUSTOMERFields MARITAL_STATUS(Boolean MARITAL_STATUS) {
+  public Customer MARITAL_STATUS(String MARITAL_STATUS) {
     this.MARITAL_STATUS = MARITAL_STATUS;
     return this;
   }
@@ -331,15 +307,15 @@ public class ApiV1FINCUSTOMERFields {
    * @return MARITAL_STATUS
   **/
   @ApiModelProperty(value = "")
-  public Boolean getMARITALSTATUS() {
+  public String getMARITALSTATUS() {
     return MARITAL_STATUS;
   }
 
-  public void setMARITALSTATUS(Boolean MARITAL_STATUS) {
+  public void setMARITALSTATUS(String MARITAL_STATUS) {
     this.MARITAL_STATUS = MARITAL_STATUS;
   }
 
-  public ApiV1FINCUSTOMERFields NATIONALITY(Boolean NATIONALITY) {
+  public Customer NATIONALITY(String NATIONALITY) {
     this.NATIONALITY = NATIONALITY;
     return this;
   }
@@ -349,15 +325,15 @@ public class ApiV1FINCUSTOMERFields {
    * @return NATIONALITY
   **/
   @ApiModelProperty(value = "")
-  public Boolean getNATIONALITY() {
+  public String getNATIONALITY() {
     return NATIONALITY;
   }
 
-  public void setNATIONALITY(Boolean NATIONALITY) {
+  public void setNATIONALITY(String NATIONALITY) {
     this.NATIONALITY = NATIONALITY;
   }
 
-  public ApiV1FINCUSTOMERFields NUMBER_CHILDREN(Boolean NUMBER_CHILDREN) {
+  public Customer NUMBER_CHILDREN(BigDecimal NUMBER_CHILDREN) {
     this.NUMBER_CHILDREN = NUMBER_CHILDREN;
     return this;
   }
@@ -367,15 +343,15 @@ public class ApiV1FINCUSTOMERFields {
    * @return NUMBER_CHILDREN
   **/
   @ApiModelProperty(value = "")
-  public Boolean getNUMBERCHILDREN() {
+  public BigDecimal getNUMBERCHILDREN() {
     return NUMBER_CHILDREN;
   }
 
-  public void setNUMBERCHILDREN(Boolean NUMBER_CHILDREN) {
+  public void setNUMBERCHILDREN(BigDecimal NUMBER_CHILDREN) {
     this.NUMBER_CHILDREN = NUMBER_CHILDREN;
   }
 
-  public ApiV1FINCUSTOMERFields PHONE(Boolean PHONE) {
+  public Customer PHONE(String PHONE) {
     this.PHONE = PHONE;
     return this;
   }
@@ -385,15 +361,15 @@ public class ApiV1FINCUSTOMERFields {
    * @return PHONE
   **/
   @ApiModelProperty(value = "")
-  public Boolean getPHONE() {
+  public String getPHONE() {
     return PHONE;
   }
 
-  public void setPHONE(Boolean PHONE) {
+  public void setPHONE(String PHONE) {
     this.PHONE = PHONE;
   }
 
-  public ApiV1FINCUSTOMERFields STREET(Boolean STREET) {
+  public Customer STREET(String STREET) {
     this.STREET = STREET;
     return this;
   }
@@ -403,15 +379,15 @@ public class ApiV1FINCUSTOMERFields {
    * @return STREET
   **/
   @ApiModelProperty(value = "")
-  public Boolean getSTREET() {
+  public String getSTREET() {
     return STREET;
   }
 
-  public void setSTREET(Boolean STREET) {
+  public void setSTREET(String STREET) {
     this.STREET = STREET;
   }
 
-  public ApiV1FINCUSTOMERFields ZIP(Boolean ZIP) {
+  public Customer ZIP(String ZIP) {
     this.ZIP = ZIP;
     return this;
   }
@@ -421,30 +397,12 @@ public class ApiV1FINCUSTOMERFields {
    * @return ZIP
   **/
   @ApiModelProperty(value = "")
-  public Boolean getZIP() {
+  public String getZIP() {
     return ZIP;
   }
 
-  public void setZIP(Boolean ZIP) {
+  public void setZIP(String ZIP) {
     this.ZIP = ZIP;
-  }
-
-  public ApiV1FINCUSTOMERFields CAR_INSURANCE(Boolean CAR_INSURANCE) {
-    this.CAR_INSURANCE = CAR_INSURANCE;
-    return this;
-  }
-
-   /**
-   * Get CAR_INSURANCE
-   * @return CAR_INSURANCE
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean getCARINSURANCE() {
-    return CAR_INSURANCE;
-  }
-
-  public void setCARINSURANCE(Boolean CAR_INSURANCE) {
-    this.CAR_INSURANCE = CAR_INSURANCE;
   }
 
 
@@ -456,47 +414,44 @@ public class ApiV1FINCUSTOMERFields {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ApiV1FINCUSTOMERFields apiV1FINCUSTOMERFields = (ApiV1FINCUSTOMERFields) o;
-    return Objects.equals(this.id, apiV1FINCUSTOMERFields.id) &&
-        Objects.equals(this.CITY, apiV1FINCUSTOMERFields.CITY) &&
-        Objects.equals(this.COUNTRY_CODE, apiV1FINCUSTOMERFields.COUNTRY_CODE) &&
-        Objects.equals(this.CUSTOMER_ID, apiV1FINCUSTOMERFields.CUSTOMER_ID) &&
-        Objects.equals(this.DATE_OF_BIRTH, apiV1FINCUSTOMERFields.DATE_OF_BIRTH) &&
-        Objects.equals(this.EMAIL, apiV1FINCUSTOMERFields.EMAIL) &&
-        Objects.equals(this.FIRST_NAME, apiV1FINCUSTOMERFields.FIRST_NAME) &&
-        Objects.equals(this.GENDER, apiV1FINCUSTOMERFields.GENDER) &&
-        Objects.equals(this.HOME_INSURANCE, apiV1FINCUSTOMERFields.HOME_INSURANCE) &&
-        Objects.equals(this.JOB, apiV1FINCUSTOMERFields.JOB) &&
-        Objects.equals(this.LAST_CHANGE, apiV1FINCUSTOMERFields.LAST_CHANGE) &&
-        Objects.equals(this.LAST_NAME, apiV1FINCUSTOMERFields.LAST_NAME) &&
-        Objects.equals(this.MARITAL_STATUS, apiV1FINCUSTOMERFields.MARITAL_STATUS) &&
-        Objects.equals(this.NATIONALITY, apiV1FINCUSTOMERFields.NATIONALITY) &&
-        Objects.equals(this.NUMBER_CHILDREN, apiV1FINCUSTOMERFields.NUMBER_CHILDREN) &&
-        Objects.equals(this.PHONE, apiV1FINCUSTOMERFields.PHONE) &&
-        Objects.equals(this.STREET, apiV1FINCUSTOMERFields.STREET) &&
-        Objects.equals(this.ZIP, apiV1FINCUSTOMERFields.ZIP) &&
-        Objects.equals(this.CAR_INSURANCE, apiV1FINCUSTOMERFields.CAR_INSURANCE);
+    Customer customer = (Customer) o;
+    return Objects.equals(this.id, customer.id) &&
+        Objects.equals(this.CUSTOMER_ID, customer.CUSTOMER_ID) &&
+        Objects.equals(this.CITY, customer.CITY) &&
+        Objects.equals(this.COUNTRY_CODE, customer.COUNTRY_CODE) &&
+        Objects.equals(this.DATE_OF_BIRTH, customer.DATE_OF_BIRTH) &&
+        Objects.equals(this.EMAIL, customer.EMAIL) &&
+        Objects.equals(this.FIRST_NAME, customer.FIRST_NAME) &&
+        Objects.equals(this.GENDER, customer.GENDER) &&
+        Objects.equals(this.JOB, customer.JOB) &&
+        Objects.equals(this.LAST_CHANGE, customer.LAST_CHANGE) &&
+        Objects.equals(this.LAST_NAME, customer.LAST_NAME) &&
+        Objects.equals(this.MARITAL_STATUS, customer.MARITAL_STATUS) &&
+        Objects.equals(this.NATIONALITY, customer.NATIONALITY) &&
+        Objects.equals(this.NUMBER_CHILDREN, customer.NUMBER_CHILDREN) &&
+        Objects.equals(this.PHONE, customer.PHONE) &&
+        Objects.equals(this.STREET, customer.STREET) &&
+        Objects.equals(this.ZIP, customer.ZIP);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, CITY, COUNTRY_CODE, CUSTOMER_ID, DATE_OF_BIRTH, EMAIL, FIRST_NAME, GENDER, HOME_INSURANCE, JOB, LAST_CHANGE, LAST_NAME, MARITAL_STATUS, NATIONALITY, NUMBER_CHILDREN, PHONE, STREET, ZIP, CAR_INSURANCE);
+    return Objects.hash(id, CUSTOMER_ID, CITY, COUNTRY_CODE, DATE_OF_BIRTH, EMAIL, FIRST_NAME, GENDER, JOB, LAST_CHANGE, LAST_NAME, MARITAL_STATUS, NATIONALITY, NUMBER_CHILDREN, PHONE, STREET, ZIP);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ApiV1FINCUSTOMERFields {\n");
+    sb.append("class Customer {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    CUSTOMER_ID: ").append(toIndentedString(CUSTOMER_ID)).append("\n");
     sb.append("    CITY: ").append(toIndentedString(CITY)).append("\n");
     sb.append("    COUNTRY_CODE: ").append(toIndentedString(COUNTRY_CODE)).append("\n");
-    sb.append("    CUSTOMER_ID: ").append(toIndentedString(CUSTOMER_ID)).append("\n");
     sb.append("    DATE_OF_BIRTH: ").append(toIndentedString(DATE_OF_BIRTH)).append("\n");
     sb.append("    EMAIL: ").append(toIndentedString(EMAIL)).append("\n");
     sb.append("    FIRST_NAME: ").append(toIndentedString(FIRST_NAME)).append("\n");
     sb.append("    GENDER: ").append(toIndentedString(GENDER)).append("\n");
-    sb.append("    HOME_INSURANCE: ").append(toIndentedString(HOME_INSURANCE)).append("\n");
     sb.append("    JOB: ").append(toIndentedString(JOB)).append("\n");
     sb.append("    LAST_CHANGE: ").append(toIndentedString(LAST_CHANGE)).append("\n");
     sb.append("    LAST_NAME: ").append(toIndentedString(LAST_NAME)).append("\n");
@@ -506,7 +461,6 @@ public class ApiV1FINCUSTOMERFields {
     sb.append("    PHONE: ").append(toIndentedString(PHONE)).append("\n");
     sb.append("    STREET: ").append(toIndentedString(STREET)).append("\n");
     sb.append("    ZIP: ").append(toIndentedString(ZIP)).append("\n");
-    sb.append("    CAR_INSURANCE: ").append(toIndentedString(CAR_INSURANCE)).append("\n");
     sb.append("}");
     return sb.toString();
   }

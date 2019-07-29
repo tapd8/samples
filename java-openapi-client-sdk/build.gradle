@@ -3,7 +3,7 @@ apply plugin: 'eclipse'
 apply plugin: 'java'
 
 group = 'io.tapdata'
-version = 'moa-v1.1.0-115-g56235c8'
+version = 'moa-v1.1.0-117-g6b02a67'
 
 buildscript {
     repositories {
